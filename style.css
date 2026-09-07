@@ -8,7 +8,6 @@ h1{
 header{
     padding: 5%;
     font-variant: small-caps;
-            padding: 5%;
             background-color: black;
     border-left: 3px solid darkgoldenrod;
     border-bottom: 3px dotted darkgoldenrod;
@@ -48,7 +47,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    backround-color: darkgoldenrod;
+    background-color: darkgoldenrod;
 }
 ul li{
     float: left;
@@ -93,4 +92,31 @@ section#osa5{
     border-radius: 400px;
     width: 20%;
     border-left: 1px solid darkgoldenrod;
+}
+
+img#erapilt{
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid darkgoldenrod;
+}
+
+div#suurkast{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+section#muusika{
+    border: 1px solid darkgoldenrod;
+
+}
+section#kaart{
+border: 1px solid darkgoldenrod;
+}
+section#pildigalerii{
+    border: 1px solid darkgoldenrod;
+
+}
+section#video{
+    border: 1px solid darkgoldenrod;
+
 }
