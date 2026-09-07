@@ -1,0 +1,96 @@
+/*kommentaar*/
+h1{
+    font-variant: small-caps;
+    font-size: xx-large;
+    background: black;
+    color: darkgoldenrod;
+}
+header{
+    padding: 5%;
+    font-variant: small-caps;
+            padding: 5%;
+            background-color: black;
+    border-left: 3px solid darkgoldenrod;
+    border-bottom: 3px dotted darkgoldenrod;
+    border-radius: 0 0 0 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+footer{
+    font-variant: small-caps;
+    padding: 5%;
+    background-color: black;
+    border-left: 3px solid darkgoldenrod;
+    border-top: 3px dotted darkgoldenrod;
+    border-radius: 60px 0 0 0;
+}
+section#osa1{
+    padding: 5%;
+    border: 1px solid darkgoldenrod;
+    margin: 5%;
+    width: 25%;
+}
+/* kirjuta iga section (osa3, osa4, osa5) oma kujundusega,
+mis kasutab erinevaid ääriseid, värvi. raam võiks olla ainult ühelt poolt jne
+ */
+section#osa2{
+        padding: 5%;
+        margin: 5%;
+        width: 25%;
+}
+
+img{
+    max-width: 100%;
+    border: 50px solid aliceblue;
+
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    backround-color: darkgoldenrod;
+}
+ul li{
+    float: left;
+}
+ul li a{
+    display: block;
+    color: dimgrey;
+    text-decoration: none; /*link on allajoonita*/
+    text-align: center; /*teksti joondamine keskel*/
+    padding: 10px;
+    border-left: 3px solid darkgoldenrod;
+    border-radius: 50%;
+}
+nav{
+    padding: 5%;
+    margin-bottom:20px;
+}
+ul li a:hover{
+    background-color: darkgoldenrod;
+}
+section#osa3{
+    padding: 5%;
+    border: 1px solid darkgoldenrod;
+    margin: 5%;
+    width: 25%;
+    text-align: center;
+    border-radius: 150px;
+
+}
+
+section#osa4{
+    padding: 5%;
+    border: 5px solid black;
+    margin: 15%;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+}
+section#osa5{
+    padding: 5%;
+    border: 1px solid goldenrod;
+    border-radius: 400px;
+    width: 20%;
+    border-left: 1px solid darkgoldenrod;
+}
