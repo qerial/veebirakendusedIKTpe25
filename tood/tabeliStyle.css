@@ -47,3 +47,13 @@ table#pink td{
     text-align: center;
     background-color: plum;
 }
+table#iseseisev{
+    border: 1px solid grey;
+    width: 20%;
+    height: 100px;
+    border-collapse: collapse;
+}
+table#iseseisev td{
+    border: 1px solid grey;
+    text-align: center;
+}
