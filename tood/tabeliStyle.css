@@ -27,3 +27,23 @@ table#roheline td{
     border: 1px solid green;
     text-align: center;
 }
+/*pseudoelementide kasutamine*/
+/*1.rida 1.lahter*/
+#sinine tr:nth-child(1) td:nth-child(1){
+    background-color: red;
+}
+/*1.rida 2.lahter*/
+#sinine tr:nth-child(1) td:nth-child(2){
+    background-color: yellow;
+}
+table#pink{
+    border: 1px solid pink;
+    width: 20%;
+    height: 100px;
+    border-collapse: collapse;
+}
+table#pink td{
+    border: 1px solid pink;
+    text-align: center;
+    background-color: plum;
+}
