@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>Majakaart</title>
+    <link rel="stylesheet" href="MapStyle.css">
+</head>
+
+<body>
+
+<h1>Lehel on kasutatud map area käsud</h1>
+
+<h2>Palun kliki hiirega erinevale alale pildil</h2>
+
+<!-- Pilt, millele on ühendatud map -->
+<img src="paremvaikemaja.png"
+     alt="Ilus majake"
+     usemap="#majakaart">
+
+<!-- Kaart ehk klikitavad alad -->
+<map name="majakaart">
+
+    <!-- Ring: x, y, raadius -->
+    <area
+            shape="circle"
+            coords="261,55,50"
+            href="Sun.html"
+            alt="Päike">
+
+    <!-- Ristkülik: x1, y1, x2, y2 -->
+    <area
+            shape="rect"
+            coords="138,179,170,231"
+            href="Uks.html"
+            alt="Uks">
+
+    <!-- Polügoon: x,y punktid -->
+    <area
+            shape="poly"
+            coords="48,145,154,82,284,144"
+            href="Katus.html"
+            alt="Katus">
+    <area shape="rect" coords="92,163,123,194" href="aken.html" alt="aken">
+    <area shape="rect" coords="185,164,214,193" href="aken2.html" alt="aken2">
+
+
+</map>
+
+<div id="selgitus">
+    Päikese näiv visuaalne tähesuurus on −26,74 ja absoluutne tähesuurus 4,85[4]. Päikese aktiivsustsükkel kestab umbes 11 aastat.</div>
+
+</body>
+</html>
