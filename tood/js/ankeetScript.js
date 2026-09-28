@@ -4,7 +4,7 @@ function nimiLugemine(){
     //innerHTML -düminaamililiselt genereerib teksti html'ina
     vastus.innerHTML="Tere hommikust, "+ nimi.value;
     vastus.style.color="red";
-    return name;
+    return nimi.value;
 }
 function suguvalik(){
     let vastus2=document.getElementById("vastus2")
@@ -62,8 +62,8 @@ function tervitus(){
    let nimi=nimiLugemine()
     let sugu=suguvalik()
     let spordiala=sportValik()
-    vastus4.innerHTML=nimi+'<br>'
-        +'Valitud Sugu on'+sugu+'<br>'
+    vastus4.innerHTML= 'Su nimi on: '+ nimi +'<br>'
+        +'Valitud Sugu on '+sugu+'<br>'
         +'Valitud spordialad: '+spordiala;
     vastus4.style.backgroundColor="yellow";
 }

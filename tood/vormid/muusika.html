@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muusika</title>
+  <script src="../js/muusikaScript.js"> </script>
+
+</head>
+<body>
+<table>
+<tr>
+  <td>
+    <fieldset>
+      <legend>
+        <strong>Milliseid muusikuid/ansambleid sa tead?</strong>
+      </legend>
+      <br>
+      <input type="checkbox" name="music" id="nublu" value="nublu" onchange="muusikaValik()">
+      <label for="nublu">nublu</label>
+      <br>
+      <input type="checkbox" name="music" id="Smilers" value="Smilers" onchange="muusikaValik()">
+      <label for="Smilers">Smilers</label>
+      <br>
+      <input type="checkbox" name="music" id="Helladvelled" value="Hellad velled" onchange="muusikaValik()">
+      <label for="Helladvelled">Hellad velled</label>
+      <br>
+      <input type="checkbox" name="music" id="TommyCash" value="Tommy Cash" onchange="muusikaValik()">
+      <label for="TommyCash">Tommy Cash</label>
+      <br>
+      <input type="checkbox" name="music" id="viismiinust" value="5miinust" onchange="muusikaValik()">
+      <label for="viismiinust">nublu</label>
+    </fieldset>
+  </td>
+  <td>
+    <div id="answer1"></div>
+  </td>
+
+</tr>
+<tr>
+  <td>
+  <fieldset>
+    <legend>
+      <strong>Mida arvad muusika kuulamisest koolis?</strong>
+    </legend>
+    <br>
+
+    <textarea id="MusicToughts" rows="5" cols="40"
+    placeholder="Kirjuta oma arvamus..." oninput="Musicthought()"></textarea>
+  </fieldset>
+  </td>
+  <td>
+    <div id="answer2"></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <fieldset>
+      <label for="range">
+        <strong>Mitu tundi päevas sa kuulad muusikat?</strong>
+      </label>
+
+      <br><br>
+
+    <input type="number" id="range" name="range" min="0" max="24" onclick="Mitutundi()">
+    </fieldset>
+  </td>
+  <td>
+    <div id="answer3"></div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <fieldset>
+    <br>
+    <strong>Kas sa kuulad raadiot?</strong>
+    <br>
+    <br>
+
+    <input type="radio" name="raadiojahvei" id="jah" value="jah" onclick="raadiokuulamine()">
+    <label for="jah">Jah</label>
+    <input type="radio" name="raadiojahvei" id="ei" value="ei" onclick="raadiokuulamine()">
+    <label for="ei">Ei</label>
+    </fieldset>
+  </td>
+  <td>
+    <div id="answer4"></div>
+  </td>
+</tr>
+</table>
+</body>
+</html>
