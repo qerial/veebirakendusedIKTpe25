@@ -86,6 +86,43 @@
     <div id="answer4"></div>
   </td>
 </tr>
+  <tr>
+    <td>
+      <label for="text">Milliseid raadiojaamu oskad nimetada?</label>
+      <input type="text" id="text" name="text" min="0" max="24" oninput="Millisedraadiojaamad()">
+
+    <div id="answer5"></div>
+  </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="music">Millist muusikat sa kõige rohkem kuulad?</label>
+
+      <select id="music" onclick="MuusikaValik()">
+        <option value="">-- Vali stiil --</option>
+        <option value="Pop">Pop</option>
+        <option value="Rock">Rock</option>
+        <option value="Hip-hop">Hip-hop</option>
+        <option value="Jazz">Jazz</option>
+        <option value="Elektrooniline">Elektrooniline</option>
+        <option value="Klassikaline">Klassikaline</option>
+      </select>
+
+      <div id="answer6"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="reset" value="Puhasta" onclick="Puhasta()">
+    </td>
+    <td>
+      <input type="button" value="Näita andmed" onclick="tervitus()">
+    </td>
+    <td>
+      <div id="vastus7">
+
+      </div>
+  </tr>
 </table>
 </body>
 </html>

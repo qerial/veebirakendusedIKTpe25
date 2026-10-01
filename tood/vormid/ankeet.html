@@ -3,39 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Vormid ja nupud HTML keeles</title>
-    <script src="../js/ankeetScript.js"> </script>
+    <script src="../js/ankeetScript.js"></script>
 </head>
+
 <body>
+
 <h1>Sportlase ankeet</h1>
+
 <form action="#">
     <table border="1">
+
+        <!-- NIMI -->
         <tr>
             <td>
-                <!--tekstikast -->
                 <label for="nimi">Sisesta oma nimi:</label>
             </td>
             <td>
                 <input type="text" id="nimi" oninput="nimiLugemine()">
             </td>
             <td>
-                <div id="vastus"> </div>
+                <div id="vastus"></div>
             </td>
         </tr>
 
+        <!-- SUGU -->
         <tr>
             <td>
-                <br>
                 <strong>Vali sugu:</strong>
-                <br>
             </td>
             <td>
-                <!-- radionupp - ainult üks valik on õige -->
-                <input type="radio" name="sugu" id="naine"value="naine" onclick="suguvalik()">
+                <input type="radio" name="sugu" id="naine" value="naine" onclick="suguvalik()">
                 <label for="naine">naine</label>
                 <br>
+
                 <input type="radio" name="sugu" id="mees" value="mees" onclick="suguvalik()">
                 <label for="mees">mees</label>
                 <br>
+
                 <input type="radio" name="sugu" id="muu" value="muu" onclick="suguvalik()">
                 <label for="muu">muu</label>
             </td>
@@ -44,102 +48,144 @@
             </td>
         </tr>
 
+        <!-- SPORDIALAD -->
         <tr>
             <td colspan="2">
                 <fieldset>
                     <legend>
                         <strong>Spordialad:</strong>
                     </legend>
-                    <br>
-                    <input type="checkbox" name="spordiala" id="jooksmine" value="jooksmine" onchange="sportValik()">
+
+                    <input type="checkbox" name="spordiala" id="jooksmine"
+                           value="jooksmine" onchange="sportValik()">
                     <label for="jooksmine">jooksmine</label>
                     <br>
-                    <input type="checkbox" name="spordiala" id="ujumine" value="ujumine" onchange="sportValik()">
+
+                    <input type="checkbox" name="spordiala" id="ujumine"
+                           value="ujumine" onchange="sportValik()">
                     <label for="ujumine">ujumine</label>
                     <br>
-                    <input type="checkbox" name="spordiala" id="uisutamine" value="uisutamine" onchange="sportValik()">
+
+                    <input type="checkbox" name="spordiala" id="uisutamine"
+                           value="uisutamine" onchange="sportValik()">
                     <label for="uisutamine">uisutamine</label>
                     <br>
-                    <input type="checkbox" name="spordiala" id="suusatamine" value="suusatamine" onchange="sportValik()">
+
+                    <input type="checkbox" name="spordiala" id="suusatamine"
+                           value="suusatamine" onchange="sportValik()">
                     <label for="suusatamine">suusatamine</label>
                     <br>
-                    <input type="checkbox" name="spordiala" id="jalgpall" value="jalgpall" onchange="sportValik()">
+
+                    <input type="checkbox" name="spordiala" id="jalgpall"
+                           value="jalgpall" onchange="sportValik()">
                     <label for="jalgpall">jalgpall</label>
                 </fieldset>
             </td>
+
             <td>
                 <div id="vastus3"></div>
             </td>
         </tr>
 
+        <!-- TRENNI TUNNID -->
         <tr>
             <td>
-                <!-- arvud number -->
-                <label for="tund">Mitu tundi nädalas sina teed trenni</label>
+                <label for="tund">
+                    Mitu tundi nädalas sina teed trenni?
+                </label>
             </td>
             <td>
-                <input type="number" min="0" max="24" step="1" value="0" id="tund">
+                <input type="number"
+                       min="0"
+                       max="24"
+                       step="1"
+                       value="0"
+                       id="tund">
             </td>
         </tr>
 
+        <!-- KLUBI -->
         <tr>
             <td>
-                <!-- rippmenüü -dropdownlist -->
                 <label for="klubi">Mis klubi sa külastad?</label>
             </td>
             <td>
-
                 <select name="klubi" id="klubi">
                     <option value="vali">vali...</option>
                     <option value="gym">GYM</option>
                     <option value="myfitness">myfitness</option>
-                    <option value="gym25">GYM24</option>
+                    <option value="gym24">GYM24</option>
                     <option value="kalevspa">KalevSPA</option>
                 </select>
             </td>
+            <td>
+                <div id="vastus5"></div>
+            </td>
         </tr>
+
+        <!-- TOSSUD -->
         <tr>
             <td>
-                <label for="varv"> Mis värvi tossud sul on?</label>
+                <label for="varv">Mis värvi tossud sul on?</label>
             </td>
             <td>
                 <input type="color" id="varv">
             </td>
         </tr>
 
+        <!-- VIIMANE TRENN -->
         <tr>
             <td>
-                <label for="kuupaev">Millal oli su viimane trenn?</label>
+                <label for="kuupaev">
+                    Millal oli su viimane trenn?
+                </label>
             </td>
             <td>
-            <input type="date" id="kuupaev" min="2026-b1-b1" max="2026-12-31">
+                <input type="date"
+                       id="kuupaev"
+                       min="2026-01-01"
+                       max="2026-12-31">
+            </td>
+            <td>
+                <div id="vastus6"></div>
             </td>
         </tr>
+
+        <!-- TRENNI AEG -->
         <tr>
-            Kasuta w3schools ja proovi ise input type=tel, file, password, valid ise 5 erineva tk
             <td>
-                <label for="time"> Mis kell tavaliselt jõusaalis käid?</label>
+                <label for="aeg">
+                    Mis ajal päevast te tavaliselt trenni teete?
+                </label>
             </td>
             <td>
-                <input type="time" id="time" min="07:00" max="14:00">
+                <input type="time" id="aeg" name="aeg">
             </td>
         </tr>
+
+        <!-- TELEFON -->
         <tr>
             <td>
-                <label for="telefon">Sisesta Enda telefoni number</label>
+                <label for="telefon">
+                    Sisesta enda telefoni number
+                </label>
             </td>
             <td>
                 <input type="tel" id="telefon">
             </td>
         </tr>
+
+        <!-- FAIL -->
         <tr>
             <td>
-            <label for="fail"> Vali Fail</label>
+                <label for="file">Näidake pilti endast</label>
             </td>
             <td>
-                <input type="file" id="fail">
+                <input type="file" id="file" name="file">
             </td>
         </tr>
+
+        <!-- PAROOL -->
         <tr>
             <td>
                 <label for="parool">Sisesta enda parool</label>
@@ -148,28 +194,46 @@
                 <input type="password" id="parool">
             </td>
         </tr>
+
+        <!-- RANGE -->
         <tr>
             <td>
-                <label for="range">Skaalal 1-100, Kui palju sulle jõutreening meeldib?</label>
+                <label for="kogemus">
+                    Treeningu kogemus:
+                </label>
             </td>
             <td>
-                <input type="range" id="range" name="range" min="0" max="100">
+                <input type="range"
+                       id="kogemus"
+                       min="0"
+                       max="24"
+                       onclick="rangeValik()">
+            </td>
+            <td>
+                <div id="vastus7"></div>
             </td>
         </tr>
-<tr>
+
+        <!-- NUPUD -->
+        <tr>
             <td>
-                <input type="reset" value="Puhasta" onclick="puhasta()">
+                <input type="reset"
+                       value="Puhasta"
+                       onclick="puhasta()">
             </td>
+
             <td>
-                <input type="button" value="Näita andmed" onclick="tervitus()">
+                <input type="button"
+                       value="Näita andmed"
+                       onclick="tervitus()">
             </td>
+
             <td>
                 <div id="vastus4"></div>
             </td>
-</tr>
+        </tr>
 
     </table>
-
 </form>
 
 </body>

@@ -63,3 +63,55 @@ function Mitutundi(){
     answer3.style.color="brown";
     return range.value;
 }
+
+function Millisedraadiojaamad() {
+    let text = document.getElementById("text").value;
+    let answer5 = document.getElementById("answer5");
+
+    answer5.innerHTML = "Sinu nimetatud jaamad: " + text;
+    answer5.style.color = "teal";
+
+    return text;
+}
+function MuusikaValik() {
+    let music = document.getElementById("music").value;
+    let answer6 = document.getElementById("answer6");
+
+    answer6.innerHTML = "Sinu vastus: " + music;
+    answer6.style.color = "#E30B5C";
+
+    return music;
+}
+
+
+function tervitus(){
+    let vastus7=document.getElementById("vastus7");
+    let muusika = muusikaValik();
+    let nimi = Musicthought();
+    let tund = Mitutundi();
+    let valik = raadiokuulamine();
+    let raadiojaam = raadiokuulamine();
+    let stiil = MuusikaValik();
+
+
+
+    vastus7.innerHTML="Valitud muusikud on "+muusika+"<br>"
+        +"Arvamus muusika kuulamisest koolis: "+nimi+"<br>"
+        +"Kuulad päevas nii palju tunde muusikat: "+tund+"<br>"
+        +"Kas sa kuulad raadiot: "+valik+"<br>"
+        +"Nimetatud raadiojaamad: "+raadiojaam+"<br>"
+        +"Meeldivad muusika stiilid: "+stiil;
+    vastus7.style.backgroundColor="yellow";
+}
+
+
+function puhasta(){
+    vastus1.innerHTML="";
+    vastus2.innerHTML="";
+    vastus3.innerHTML="";
+    vastus4.innerHTML="";
+    vastus5.innerHTML="";
+    vastus6.innerHTML="";
+    vastus7.innerHTML="";
+}
+
