@@ -129,3 +129,14 @@ function Puhasta() {
 
     document.getElementById("music").value = "";
 }
+
+function raadiokuulamine() {
+    let jah = document.getElementById("jah");
+    let smiley = document.getElementById("smiley");
+
+    if (jah.checked) {
+        smiley.innerHTML = '<img src="smiley.png" alt="Smiley" width="150">';
+    } else {
+        smiley.innerHTML = "";
+    }
+}
