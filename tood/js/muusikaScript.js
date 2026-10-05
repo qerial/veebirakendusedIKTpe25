@@ -132,11 +132,18 @@ function Puhasta() {
 
 function raadiokuulamine() {
     let jah = document.getElementById("jah");
+    let ei = document.getElementById("ei");
+
     let smiley = document.getElementById("smiley");
+    let sad = document.getElementById("sad");
 
     if (jah.checked) {
         smiley.innerHTML = '<img src="smiley.png" alt="Smiley" width="150">';
-    } else {
+        sad.innerHTML = "";
+    }
+
+    if (ei.checked) {
+        sad.innerHTML = '<img src="sad.png" alt="Sad" width="150">';
         smiley.innerHTML = "";
     }
 }

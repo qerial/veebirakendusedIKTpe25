@@ -60,6 +60,12 @@ div {
     padding: 0;
     text-align: center;
 }
+#sad {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-align: center;
+}
 #vastus7 {
     background-color: transparent;
     border: none;

@@ -34,7 +34,7 @@
     </fieldset>
   </td>
   <td>
-    <div id="answer1"></div>
+    <div id="answer1">Siia tuleb vastus.</div>
   </td>
 
 </tr>
@@ -51,7 +51,7 @@
   </fieldset>
   </td>
   <td>
-    <div id="answer2"></div>
+    <div id="answer2">Siia tuleb vastus.</div>
   </td>
 </tr>
 <tr>
@@ -67,7 +67,7 @@
     </fieldset>
   </td>
   <td>
-    <div id="answer3"></div>
+    <div id="answer3">Siia tuleb vastus.</div>
   </td>
 </tr>
 <tr>
@@ -83,26 +83,30 @@
     <input type="radio" name="raadiojahvei" id="ei" value="ei" onclick="raadiokuulamine()">
     <label for="ei">Ei</label>
 
-      <div id="smiley"></div>
     </fieldset>
   </td>
   <td>
-    <div id="answer4"></div>
+    <div id="answer4">Siia tuleb vastus.</div>
+    <div id="smiley"></div>
+    <div id="sad"></div>
   </td>
 </tr>
   <tr>
     <td>
       <label for="text">Milliseid raadiojaamu oskad nimetada?</label>
-      <input type="text" id="text" name="text" min="0" max="24" oninput="Millisedraadiojaamad()">
-
-    <div id="answer5"></div>
-  </td>
+      <input type="text" id="text" name="text" maxlength="24" oninput="Millisedraadiojaamad()">
+      <div id="answer5">Siia tuleb vastus.</div>
+    </td>
+    <td>
+      <!-- answer5 could go here if you want it in the second column -->
+    </td>
   </tr>
+
   <tr>
     <td>
       <label for="music">Millist muusikat sa kõige rohkem kuulad?</label>
 
-      <select id="music" onclick="MuusikaValik()">
+      <select id="music" onchange="MuusikaValik()">
         <option value="">-- Vali stiil --</option>
         <option value="Pop">Pop</option>
         <option value="Rock">Rock</option>
@@ -112,20 +116,20 @@
         <option value="Klassikaline">Klassikaline</option>
       </select>
 
-      <div id="answer6"></div>
+      <div id="answer6">Siia tuleb vastus.</div>
+    </td>
+    <td>
     </td>
   </tr>
+
   <tr>
     <td>
       <input type="button" value="Puhasta" onclick="Puhasta()">
     </td>
     <td>
       <input type="button" value="Näita andmed" onclick="tervitus()">
+      <div id="vastus7"></div>
     </td>
-    <td>
-      <div id="vastus7">
-
-      </div>
   </tr>
 </table>
 </body>
