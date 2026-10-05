@@ -105,13 +105,27 @@ function tervitus(){
 }
 
 
-function puhasta(){
-    vastus1.innerHTML="";
-    vastus2.innerHTML="";
-    vastus3.innerHTML="";
-    vastus4.innerHTML="";
-    vastus5.innerHTML="";
-    vastus6.innerHTML="";
-    vastus7.innerHTML="";
-}
+function Puhasta() {
+    document.getElementById("answer1").innerHTML = "";
+    document.getElementById("answer2").innerHTML = "";
+    document.getElementById("answer3").innerHTML = "";
+    document.getElementById("answer4").innerHTML = "";
+    document.getElementById("answer5").innerHTML = "";
+    document.getElementById("answer6").innerHTML = "";
+    document.getElementById("vastus7").innerHTML = "";
 
+    document.getElementById("nublu").checked = false;
+    document.getElementById("Smilers").checked = false;
+    document.getElementById("Helladvelled").checked = false;
+    document.getElementById("TommyCash").checked = false;
+    document.getElementById("viismiinust").checked = false;
+
+    document.getElementById("MusicToughts").value = "";
+    document.getElementById("range").value = "";
+    document.getElementById("text").value = "";
+
+    document.getElementById("jah").checked = false;
+    document.getElementById("ei").checked = false;
+
+    document.getElementById("music").value = "";
+}
