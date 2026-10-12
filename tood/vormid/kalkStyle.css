@@ -28,3 +28,9 @@ label:hover{
     border: 1pt solid black;
     padding: 2px;
 }
+section#osa2{
+    border: 1pt solid black;
+    border-radius: 10pt;
+    padding: 10pt;
+    width: 40%;
+}
