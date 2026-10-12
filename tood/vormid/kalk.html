@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <title>Saia kalkulaator</title>
   <script src="../js/saiakalkScript.js"></script>
+  <script src="../js/tempKalk.js"></script>
   <link rel="stylesheet" href="kalkStyle.css">
-  <link rel="stylesheet" href="tempKalk.js">
 </head>
 <body>
 
 <h1>Kalkulaator</h1>
-<section id="osa1">
+<section id="yld">
+  <section id="osa1">
   <h2>Saia kalkulaator</h2>
 <label for="kogus">Kogus:</label>
 <input type="number" id="kogus" min="1" max="10" step="1" onchange="saiaKalk()">
@@ -26,18 +27,20 @@
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPJ5yZ5TSfv4ZnNpx4XZYgADEIbohxG8I-GeNkvLOYwA&s=10" alt="" id="pilt" width="100" height="100">
 <div id="vastus"></div>
 </section>
-<br>
-<section id="osa2">
+  <section id="osa2">
   <h2>Temperatuuri kalkulaator</h2>
   <label for="temp">Sisesta temperatuur</label>
-  <input type="number" id="temp" min="-50" max="50" step="1">
+  <input type="text" id="temp" min="-50" max="50" step="1" value="0">
   <br>
-  <input type="radio" name="tempValik" id="celsius" value="celsius" >
-  <label for="celsius">C - Celsius</label>
+  <input type="radio" name="tempValik" id="celsius" value="celsius" onchange="tempTeisendus()">
+  <label for="celsius">&deg;C - Celsius</label>
   <br>
-  <input type="radio" name="tempValik" id="fahrenheit" value="fahrenheit">
-  <label for="fahrenheit">F - Fahrenheit</label>
+  <input type="radio" name="tempValik" id="fahrenheit" value="fahrenheit" onchange="tempTeisendus()">
+  <label for="fahrenheit">&deg;F - Fahrenheit</label>
+  <br>
   <div id="vastus2"></div>
+  <img src="https://cdn1.byjus.com/wp-content/uploads/2019/03/relation-between-celsius-and-fahrenheit.png" width="250" height="250" alt="">
+</section>
 </section>
 </body>
 </html>
