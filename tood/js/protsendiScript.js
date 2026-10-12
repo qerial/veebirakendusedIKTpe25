@@ -6,4 +6,8 @@ function numbriprotsendid(){
 
 
     vastus4.innerHTML=protsent.value + "%" + " arvust " + number.value + " on " + ((number.value*protsent.value)/100).toFixed(2);
+    if(number){
+        number>10000
+
+    }
 }
