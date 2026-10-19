@@ -3,7 +3,10 @@
 <html lang="et">
 <head><!-- tehniline info -->
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Armand veebirakenduste aluste töö</title>
+    <script src="tood/js/kuupaevaFunktsioonid.js"></script>
+    <script src="tood/js/nupuScript.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -44,9 +47,15 @@
         <p>See on veebirakenduste tunnis
             käsitsi kirjutatud leht!</p>
         <br>
+            <input type="button" value="TÄNA ON" onclick="kellanupp()">
+            <div id="vastus">Siia tuleb kuupäev ja kellaaeg.</div>
         <br>
         <p>Palun kasuta navigeerimusmenüüd, et leida infot</p>
         </section>
+
+
+        <input type="button" value="vajuta et näha mitu päeva" onclick="SunnipaevaniNupp()">
+        <div id="sunnipaevastus">Minu sünnipävani on: </div>
 
 <section id="erapilt">
     <h2>Päevapilt</h2>
