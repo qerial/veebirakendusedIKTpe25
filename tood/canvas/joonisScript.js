@@ -68,6 +68,7 @@ function smileyhead(){
 
     if(tahvel.getContext){
         let t = tahvel.getContext("2d");
+        t.beginPath();
         t.fillStyle="yellow";
         t.arc(150,200,90,0,2*Math.PI,true); //alguspunk - x, y, laius, kõrgus
         t.fill();
@@ -100,12 +101,14 @@ function smileyeye() {
     const tahvel = document.getElementById("tahvel");
     if (tahvel.getContext) {
         let t = tahvel.getContext("2d");
+        t.beginPath();
         t.fillStyle = "white";
         t.arc(190, 160, 20, 0, 2 * Math.PI, true); //alguspunk - x, y, laius, kõrgus
         t.fill();
     }
     if (tahvel.getContext) {
         let t = tahvel.getContext("2d");
+        t.beginPath();
         t.fillStyle = "white";
         t.arc(110, 160, 20, 0, 2 * Math.PI, true); //alguspunk - x, y, laius, kõrgus
         t.fill();
@@ -115,14 +118,16 @@ function smileyeyepupils(){
     const tahvel=document.getElementById("tahvel");
     if (tahvel.getContext) {
         let t = tahvel.getContext("2d");
+        t.beginPath();
         t.fillStyle = "black";
-        t.arc(190, 160, 5, 0, 2 * Math.PI, true); //alguspunk - x, y, laius, kõrgus
+        t.arc(190, 170, 5, 0, 2 * Math.PI, true); //alguspunk - x, y, laius, kõrgus
         t.fill();
     }
     if (tahvel.getContext) {
         let t = tahvel.getContext("2d");
+        t.beginPath();
         t.fillStyle = "black";
-        t.arc(110, 160, 5, 0, 2 * Math.PI, true); //alguspunk - x, y, laius, kõrgus
+        t.arc(110, 170, 5, 0, 2 * Math.PI, true); //alguspunk - x, y, laius, kõrgus
         t.fill();
     }
 }
@@ -140,4 +145,24 @@ function smileyears(){
         t.fillStyle="#ebf06c";
         t.fillRect(235,160,30,80);
     }
+}
+function pilt(){
+    const tahvel=document.getElementById("tahvel");
+    if(tahvel.getContext){
+        let t = tahvel.getContext("2d");
+        const fail=new Image();
+        fail.src="https://thumbs.dreamstime.com/b/single-cheerful-emoji-open-arms-displayed-transparent-background-emoji-features-friendly-welcoming-expression-341241999.jpg";
+        fail.onload=()=>{
+            t.drawImage(fail, 50, 50, 100, 100)
+        }
+    }
+}
+function smile(){
+    smileyhead();
+    smileyeye();
+    smileynose();
+    smileyeye();
+    smileyears();
+    smileymouth();
+    smileyeyepupils();
 }
