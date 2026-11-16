@@ -121,3 +121,13 @@ section#video{
     border: 1px solid darkgoldenrod;
 
 }
+#osa1, h2{
+    position: relative;
+    left: 0;
+    width: 200px;
+}
+h2{
+    position:relative;
+    left: 0;
+    width: 200px;
+}
