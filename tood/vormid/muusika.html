@@ -4,11 +4,81 @@
     <meta charset="UTF-8">
     <title>Muusika</title>
   <script src="../js/muusikaScript.js"> </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
+          integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
+          crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      // peidame vead
+      $('.viga').hide();
+
+      // puhastusnupp
+      $('#puhasta').click(function(){
+        $('#muusikaVorm')[0].reset();
+        $('.viga').hide();
+      });
+
+      // valideerimine, kui vorm on saadetud
+      $('#muusikaVorm').submit(function(event){
+        let valid = true;
+
+        // 1. Checkbox
+        if($('input[name="music"]:checked').length === 0){
+          $('#viga1').show();
+          valid = false;
+        } else { $('#viga1').hide(); }
+
+        // 2. Textarea
+        if($('#MusicToughts').val().trim() === ""){
+          $('#viga2').show();
+          valid = false;
+        } else { $('#viga2').hide(); }
+
+        // 3. Number (0–24)
+        let tunnid = $('#range').val();
+        if(tunnid === "" || isNaN(tunnid) || tunnid < 0 || tunnid > 24){
+          $('#viga3').show();
+          valid = false;
+        } else { $('#viga3').hide(); }
+
+        // 4. Radio
+        if($('input[name="raadiojahvei"]:checked').length === 0){
+          $('#viga4').show();
+          valid = false;
+        } else { $('#viga4').hide(); }
+
+        // 5. Text (ainult tähed)
+        let tekst = $('#text').val().trim();
+        if(tekst === "" || !/^[a-zA-Z\s]+$/.test(tekst)){
+          $('#viga5').show();
+          valid = false;
+        } else { $('#viga5').hide(); }
+
+        // 6. Select
+        if($('#musica').val() === ""){
+          $('#viga6').show();
+          valid = false;
+        } else { $('#viga6').hide(); }
+
+        // kui on vead, siis ei ole vaja vormi saada
+        if(!valid){
+          event.preventDefault();
+        } else {
+          alert("Vorm on edukalt saadetud!");
+        }
+      });
+    });
+
+  </script>
   <link rel="stylesheet" href="muusikaStyle.css">
 
 </head>
 <body>
 <h1>Muusika küsimustik</h1>
+<form action="#" id="muusikaVorm">
 <table>
 <tr>
   <td>
@@ -35,6 +105,7 @@
   </td>
   <td>
     <div id="answer1">Siia tuleb vastus.</div>
+    <span class="viga" id="viga1">Vali vähemalt üks ansambel/muusik.</span>
   </td>
 
 </tr>
@@ -52,6 +123,7 @@
   </td>
   <td>
     <div id="answer2">Siia tuleb vastus.</div>
+    <span class="viga" id="viga2">Vajuta kastikese peale ja kirjuta.</span>
   </td>
 </tr>
 <tr>
@@ -68,6 +140,7 @@
   </td>
   <td>
     <div id="answer3">Siia tuleb vastus.</div>
+    <span class="viga" id="viga3">Sa pead vajutama nooltekeste peale.</span>
   </td>
 </tr>
 <tr>
@@ -87,6 +160,7 @@
   </td>
   <td>
     <div id="answer4">Siia tuleb vastus:</div>
+    <span class="viga" id="viga4">Sul jäi kuskilt valik puudu.</span>
     <div id="smiley"></div>
     <div id="sad"></div>
   </td>
@@ -98,14 +172,15 @@
     </td>
     <td>
       <div id="answer5">Siia tuleb vastus.</div>
+      <span class="viga" id="viga5">Kirjuta kasti kast on tühi.</span>
     </td>
   </tr>
 
   <tr>
     <td>
-      <label for="music">Millist muusikat sa kõige rohkem kuulad?</label>
+      <label for="musica">Millist muusikat sa kõige rohkem kuulad?</label>
 
-      <select id="music" onchange="MuusikaValik()">
+      <select id="musica" onchange="MuusikaValik()">
         <option value="">-- Vali stiil --</option>
         <option value="Pop">Pop</option>
         <option value="Rock">Rock</option>
@@ -118,18 +193,24 @@
     </td>
     <td>
       <div id="answer6">Siia tuleb vastus.</div>
+      <span class="viga" id="viga6">Vali millist kuulad.</span>
     </td>
   </tr>
 
   <tr>
     <td>
-      <input type="button" value="Puhasta" onclick="Puhasta()">
+      <input type="button" value="Puhasta" id="puhasta" onclick="Puhasta()">
     </td>
     <td>
-      <input type="button" value="Näita andmed" onclick="tervitus()">
+      <input type="submit" value="Näita andmed" onclick="tervitus()">
+    </td>
+  </tr>
+  <tr>
+    <td>
       <div id="vastus7"></div>
     </td>
   </tr>
 </table>
+</form>
 </body>
 </html>

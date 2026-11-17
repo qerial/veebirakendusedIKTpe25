@@ -74,7 +74,7 @@ function Millisedraadiojaamad() {
     return text;
 }
 function MuusikaValik() {
-    let music = document.getElementById("music").value;
+    let music = document.getElementById("musica").value;
     let answer6 = document.getElementById("answer6");
 
     answer6.innerHTML = "Sinu vastus: " + music;
@@ -122,6 +122,8 @@ function Puhasta() {
 
     document.getElementById("MusicToughts").value = "";
     document.getElementById("range").value = "";
+    document.getElementById("smiley").innerHTML = "";
+    document.getElementById("sad").innerHTML = "";
     document.getElementById("text").value = "";
 
     document.getElementById("jah").checked = false;
