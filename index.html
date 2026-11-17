@@ -1,107 +1,106 @@
-<!DOCTYPE html> <!--deklaratsioon et kasutame html5 -->
-<!-- kommentaar -->
+<!DOCTYPE html>
 <html lang="et">
-<head><!-- tehniline info -->
+<head>
     <meta charset="UTF-8">
     <title>Armand veebirakenduste aluste töö</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-            crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"
-            integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI="
-            crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
     <script src="tood/js/kuupaevaFunktsioonid.js"></script>
-    <script src="tood/js/nupuScript.js"></script>
 
     <script>
-        $(document).ready(function() {
-            // paremale nuppu vajutamine
+        $(function () {
             $('#paremale').click(function () {
-                $('#osa1').animate({left: '200px'}, 1000);
+                $('#osa1').animate({ left: '200px' }, 1000);
                 $(this).hide();
                 $('#vasakule').show();
             });
-            // vasakule nuppu vajutamine
+
             $('#vasakule').click(function () {
-                $('#osa1').animate({left: '0px'}, 1000);
+                $('#osa1').animate({ left: '0px' }, 1000);
                 $(this).hide();
                 $('#paremale').show();
             });
-        });
 
-        function leheStart(){
-            $('#pilt').draggable();
-        }
+            // ID on "ulesse" nii HTML-is kui ka siin
+            $('#ulesse').click(function () {
+                $('#osa1').animate({ top: '-100px' }, 1000);
+                $(this).hide();
+                $('#alla').show();
+            });
+
+            $('#alla').click(function () {
+                $('#osa1').animate({ top: '0px' }, 1000);
+                $(this).hide();
+                $('#ulesse').show();
+            });
+
+            $('#pilt').draggable({
+                drag: function (event, ui) {
+                    $('#koordinaadid').html(
+                        'x: ' + Math.round(ui.position.left) +
+                        ' || y: ' + Math.round(ui.position.top)
+                    );
+                }
+            });
+        });
     </script>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="leheStart()">
-<!-- veebilehe sisu mis, kasutaja näeb -->
-<!-- päis -->
+<body>
 <header>
-<h1>
-    Armand veebirakenduste aluste töö
-</h1>
+    <h1>Armand veebirakenduste aluste töö</h1>
 </header>
-    <!-- navigeerimismenüü -->
-    <nav>
-        <ul>
-            <li>
-            <a href="index.html">Avaleht</a>
-            </li>
-            <li>
-                <a href="kontakt.html">Kontakt</a>
-            </li>
-            <li>
-                <a href="tehtud.html">Tehtud tööd</a>
-            </li>
-            <li>
-               <a href="lingid.html">Kasulikud lingid</a>
-            </li>
-            <li>
-                <a href="meedia.html">Meedia</a>
-            </li>
-            <li>
-            <a href="tood/Tabelid/tabelid.html">Tabelid</a>
-            </li>
-        </ul>
-    </nav>
-    <!--sisu-->
-    <main>
-        <section id="osa1">
+
+<nav>
+    <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="tehtud.html">Tehtud tööd</a></li>
+        <li><a href="lingid.html">Kasulikud lingid</a></li>
+        <li><a href="meedia.html">Meedia</a></li>
+        <li><a href="tood/Tabelid/tabelid.html">Tabelid</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="osa1">
         <h2>Tere tulemast</h2>
-        <p>See on veebirakenduste tunnis
-            käsitsi kirjutatud leht!</p>
-        <br>
-            <input type="button" value="TÄNA ON" onclick="kellanupp()">
-            <div id="vastus">Siia tuleb kuupäev ja kellaaeg.</div>
-        <br>
-        <p>Palun kasuta navigeerimusmenüüd, et leida infot</p>
-        </section>
-        <input type="button" value="vasakule" id="vasakule">
-        <input type="button" value="paremale" id="paremale">
-        <br>
-        <br>
+        <p>See on veebirakenduste tunnis käsitsi kirjutatud leht!</p>
 
+        <input type="button" value="TÄNA ON" onclick="kellanupp()">
+        <div id="vastus">Siia tuleb kuupäev ja kellaaeg.</div>
 
-        <input type="button" value="vajuta et näha mitu päeva" onclick="SunnipaevaniNupp()">
-        <div id="sunnipaevastus">Minu sünnipävani on: </div>
+        <p>Palun kasuta navigeerimismenüüd, et leida infot.</p>
+    </section>
 
-<section id="erapilt">
-    <h2>Päevapilt</h2>
-    <div>Ise tehtud pilt
-        <img src="star.png" alt="" id="pilt">
-    </div>
-</section>
+    <input type="button" value="vasakule" id="vasakule">
+    <input type="button" value="paremale" id="paremale">
+    <br><br>
+    <input type="button" value="üles" id="ulesse">
+    <input type="button" value="alla" id="alla">
 
-    </main>
-    <!--jalus-->
-    <footer>
-    <div>
-    Õpilase leht
-    </div>
-    </footer>
+    <section id="osa45">
+        <h2>Juhend</h2>
+        <p>1. Vajuta paremale või vasakule, et sektsioon liiguks.</p>
+        <p>2. Vajuta üles või alla, et sektsioon liiguks.</p>
+        <p>3. Lohista allolevat pilti, et näha koordinaate.</p>
+    </section>
 
+    <input type="button" value="Vajuta, et näha mitu päeva" onclick="SunnipaevaniNupp()">
+    <div id="sunnipaevastus">Minu sünnipäevani on:</div>
 
+    <section id="erapilt">
+        <h2>Päevapilt</h2>
+        <p>Ise tehtud pilt</p>
+        <img src="star.png" alt="Täht" id="pilt">
+        <div id="koordinaadid">Pildi koordinaadid ilmuvad siia.</div>
+    </section>
+</main>
+
+<footer>
+    <div>Õpilase leht</div>
+</footer>
 </body>
 </html>
