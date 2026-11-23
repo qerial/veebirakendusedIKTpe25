@@ -5,6 +5,43 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </script>
+    <style type="text/css" >
+        ul#menyy {
+            width: 200px;
+        }
+        ul#menyy li ul#menyy {
+            list-style-type:none;
+            width: 200px;
+        }
+        a {
+            display:block;
+            border-bottom: 1px solid #fff;
+            text-decoration: none;
+            background: #444;
+            color: #fff;
+            padding: 0.3em;
+        }
+        li {
+            display:inline;
+        }
+        .hover {
+            background: #3C9;
+            font-weight: 700;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $('a').hover(function(event){
+                    $(this).addClass('hover');
+                },
+                function(){
+                    $(this).removeClass('hover');
+                });
+        });
+    </script>
 </head>
 <body>
 <!-- veebilehe sisu mis, kasutaja näeb -->
@@ -15,22 +52,22 @@
 </h1>
 </header>
     <!-- navigeerimismenüü -->
-    <nav>
-        <ul>
-            <li>
-            <a href="index.html">Avaleht</a>
-            </li>
-            <li>
-                <a href="kontakt.html">Kontakt</a>
-            </li>
-            <li>
-                <a href="tehtud.html">Tehtud tööd</a>
-            </li>
-            <li>
-               <a href="lingid.html">Kasulikud lingid</a>
-            </li>
-        </ul>
-    </nav>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li>
+            <a href="tehtud.html">Tehtud tööd</a>
+            <ul id="menyy">
+                <li><a href="https://qerial.wordpress.com/">WordPress</a></li>
+                <li><a href="tood/canvas/joonistamine.html">Canvase joonistamine</a></li>
+                <li><a href="tood/jQuery/index.html">jQuery</a></li>
+            </ul>
+        </li>
+        <li><a href="lingid.html">Kasulikud lingid</a></li>
+    </ul>
+</nav>
     <!--sisu-->
     <main>
         <section id="osa4">

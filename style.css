@@ -1,21 +1,23 @@
-/*kommentaar*/
-h1{
+
+h1 {
     font-variant: small-caps;
     font-size: xx-large;
     background: black;
     color: darkgoldenrod;
 }
-header{
+
+header {
     padding: 5%;
     font-variant: small-caps;
-            background-color: black;
+    background-color: black;
     border-left: 3px solid darkgoldenrod;
     border-bottom: 3px dotted darkgoldenrod;
     border-radius: 0 0 0 60px;
     background-repeat: no-repeat;
     background-position: center center;
 }
-footer{
+
+footer {
     font-variant: small-caps;
     padding: 5%;
     background-color: black;
@@ -23,62 +25,111 @@ footer{
     border-top: 3px dotted darkgoldenrod;
     border-radius: 60px 0 0 0;
 }
-section#osa1{
+
+section#osa1 {
     padding: 5%;
     border: 1px solid darkgoldenrod;
     margin: 5%;
     width: 25%;
 }
-/* kirjuta iga section (osa3, osa4, osa5) oma kujundusega,
-mis kasutab erinevaid ääriseid, värvi. raam võiks olla ainult ühelt poolt jne
- */
-section#osa2{
-        padding: 5%;
-        margin: 5%;
-        width: 25%;
+
+section#osa2 {
+    padding: 5%;
+    margin: 5%;
+    width: 25%;
 }
 
-img{
+img {
     max-width: 100%;
-    border: 50px solid aliceblue;
-
+    box-sizing: border-box;
+    border: 5px solid aliceblue;
 }
-ul {
+
+img#erapilt {
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid darkgoldenrod;
+}
+
+nav {
+    padding: 5%;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     background-color: darkgoldenrod;
 }
-ul li{
+
+nav ul li {
     float: left;
+    position: relative;
 }
-ul li a{
+
+nav ul li a {
     display: block;
     color: dimgrey;
-    text-decoration: none; /*link on allajoonita*/
-    text-align: center; /*teksti joondamine keskel*/
+    text-decoration: none;
+    text-align: center;
     padding: 10px;
     border-left: 3px solid darkgoldenrod;
-    border-radius: 50%;
 }
-nav{
-    padding: 5%;
-    margin-bottom:20px;
+
+nav ul li a:hover {
+    background-color: black;
+    color: darkgoldenrod;
 }
-ul li a:hover{
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    z-index: 100;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li {
+    float: none;
+    display: block;
+    width: 200px;
+}
+
+nav ul li ul li a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    background-color: black;
+    border-bottom: 1px solid darkgoldenrod;
+}
+
+nav ul li ul li a:hover {
     background-color: darkgoldenrod;
+    color: black;
+    font-weight: 700;
 }
-section#osa3{
+
+section#osa3 {
     padding: 5%;
     border: 1px solid darkgoldenrod;
     margin: 5%;
     width: 25%;
     text-align: center;
     border-radius: 150px;
-
 }
 
-section#osa4{
+section#osa4 {
     padding: 5%;
     border: 5px solid black;
     margin: 20px;
@@ -87,7 +138,7 @@ section#osa4{
     border-radius: 10px;
 }
 
-section#osa5{
+section#osa5 {
     padding: 5%;
     border: 1px solid goldenrod;
     border-radius: 400px;
@@ -95,43 +146,59 @@ section#osa5{
     border-left: 1px solid darkgoldenrod;
 }
 
-img#erapilt{
-    width: 100%;
-    border-radius: 50%;
-    border: 5px solid darkgoldenrod;
-}
-
-div#suurkast{
+div#suurkast {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
-section#muusika{
-    border: 1px solid darkgoldenrod;
 
-}
-section#kaart{
-border: 1px solid darkgoldenrod;
-}
-section#pildigalerii{
+section#muusika {
     border: 1px solid darkgoldenrod;
-
 }
-section#video{
+
+section#kaart {
     border: 1px solid darkgoldenrod;
-
 }
-#osa1, h2{
+
+section#pildigalerii {
+    border: 1px solid darkgoldenrod;
+}
+
+section#video {
+    border: 1px solid darkgoldenrod;
+}
+
+h2 {
     position: relative;
     left: 0;
-    width: 200px;
+    max-width: 100%;
 }
-h2{
-    position:relative;
+
+#osa45 {
+    padding: 5%;
+    border: 1px solid darkgoldenrod;
+    margin: 5%;
+    width: 25%;
+}
+
+#vihje {
+    position: absolute;
+    z-index: 9999;
+    color: #fff;
+    font-size: 10px;
+    background-color: #000;
+    padding: 5px 25px;
+    display: none;
+    pointer-events: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+section#osa1 {
+    position: relative;
     left: 0;
-    width: 200px;
-}
-#osa45{
+    top: 0;
     padding: 5%;
     border: 1px solid darkgoldenrod;
     margin: 5%;
